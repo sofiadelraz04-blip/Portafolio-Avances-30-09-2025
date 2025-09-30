@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "canora-frente", sans-serif;
+  font-style: normal;
+  color: #333;
+  background-color: #fbfaf5;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,464 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "canora-frente", sans-serif;
+  font-style: normal;
+  color: #333;
+  background-color: #fbfaf5;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee-container {
+  position: relative;
+  width: 99vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+.marquee-left {
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+
+    margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 500px;
+  font-weight: bold;
+  margin-top: 5%;
+  z-index: 0;
+}
+
+.track-left {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 32s linear infinite;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-right {
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+
+    margin: 0;
+  padding: 0;
+  color: rgb(41, 228, 3);
+  font-family: "canora-verso", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 500px;
+  font-weight: 400;
+  margin-top: 5%;
+  z-index: 0;
+}
+
+.track-right {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-right 60s linear infinite;
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+.sidebar-marquee {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 100vh;
+  background-color: transparent;
+  border: #333 5px solid;
+  overflow: hidden;
+  z-index: 999;
+  transition: opacity 0.5s ease;
+}
+
+
+.ornaments {
+  align-items: left; /* vertical alignment if needed */
+  z-index: -10;
+  margin-top: -2px;
+  display: flex;
+  margin-right: 500px;
+}
+.nav-icon {
+  height: 50px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  scale: 4;
+  display: inline-block;
+}
+
+#nav-placeholder {
+  height: 0;
+  transition: height 0s ease;
+}
+
+nav {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: rgba(247, 192, 248, 0.42);
+  border-radius: 1px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(247, 192, 248, 0.36);
+  padding: 5px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+}
+
+nav.sticky + #nav-placeholder {
+  height: 80px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 600;
+  font-size: 30px;
+  z-index: 12;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #fbfaf5;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  z-index: 12;
+}
+
+nav li a:hover {
+  color: rgba(84, 107, 195, 0.9);
+  z-index: 12;
+}
+
+.content-section {
+  padding: 60px 40px;
+  background-color: #fbfaf5;
+  min-height: 100vh;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  background: rgba(84, 107, 195, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.8px);
+  -webkit-backdrop-filter: blur(8.8px);
+  border: 1px solid rgba(84, 107, 195, 0.36);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #20e119;
+  color: #fff;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+
+nav li a:hover .nav-icon {
+  transform: scale(1);
+}
+
+model-viewer {
+       width: 50vw;
+       height: 50vh;
+   }
+
+
+
+#about h1 {
+  font-family: "scatterplot-vf", sans-serif;
+font-variation-settings: "RAND" 100, "wght" 300;
+  font-size: 100px;
+  color: #546bc3;
+  text-align: left; /* o center, right */
+  margin-bottom: 20px;
+  margin-top: -10px;
+  transform: rotate(-3deg);
+  display: inline-block;
+  z-index: 110;
+}
+
+.intro1 {
+  position: relative;
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 500;
+  font-size: 40px;
+  color: #333;
+  text-align: left;
+  line-height: 1.2;
+  margin-left: 50px;
+  margin-top: -50px;
+  z-index: 111;
+}
+
+.hover-name {
+  position: relative;
+  cursor: pointer;
+  color: #333;
+  text-decoration: underline #20e119;
+}
+
+.hover-image {
+  position: absolute;
+  top: -60px;
+  left: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.hover-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+
+.hover-name:hover ~ .hover-image {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hover-name:hover ~ .hover-image img {
+  animation: spinOnce 1s ease-out forwards;
+}
+
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+.intro2 {
+  font-family: "scatterplot-vf", sans-serif;
+font-variation-settings: "RAND" 0, "wght" 150;
+  font-size: 40px;
+  color: #333;
+  text-align: left; /* o justify, center */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  z-index: 111;
+  line-height: 1.2;
+  margin-left: 50px;
+}
+
+.intro3 {
+  font-family: "scatterplot-vf", sans-serif;
+font-variation-settings: "RAND" 0, "wght" 150;
+  font-size: 40px;
+  color: #333;
+  text-align: left; /* o justify, center */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  z-index: 111;
+  line-height: 1.2;
+  margin-left: 50px;
+}
+
+.intro4 {
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 150;
+  font-size: 40px;
+  color: #333;
+  text-align: left; /* o justify, center */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  z-index: 111;
+  line-height: 1.2;
+  margin-left: 50px;
+}
+
+.work {
+  position: relative;
+  z-index: 1;
+  margin-top: -75px;
+}
+
+#work h1 {
+  font-family: "canora-frente", sans-serif;
+  font-weight: 400;
+  margin-left: 450px;
+  margin-top: 80px;
+  font-size: 320px;
+  font-style: normal;
+  color: #333;
+  z-index: -1;
+  position:absolute;
+}
+
+#work h2 {
+  font-family: "canora-frente", sans-serif;
+  font-weight: 400;
+  margin-left: 445px;
+  margin-top: 80px;
+  font-size: 320px;
+  font-style: normal;
+  color: #20e119;
+  z-index: -2;
+  position:absolute;
+
+}
+
+.work1 {
+  position: absolute;
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 200;
+  font-size: 40px;
+  color: #333;
+  text-align: left;
+  line-height: 1.2;
+  margin-left: 800px;
+  margin-top: 420px;
+  z-index: 111;
+}
+
+.work2 {
+  position: absolute;
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 500;
+  font-size: 40px;
+  color: #333;
+  text-align: left;
+  line-height: 1.2;
+  margin-left: 800px;
+  margin-top: 480px;
+  z-index: 111;
+}
+
+.TATO {
+  position: absolute;
+  margin-top: -30px;
+  margin-left: -300px;
+  width: 100vw;
+  height: 120vh;
+  z-index: 0; /* para que no bloquee clics en el texto */
+}
+
+#click-hint {
+  position: absolute;
+  margin-top: 550px;
+  left: 150px;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  font-family: "scatterplot-vf", sans-serif;
+  font-variation-settings: "RAND" 0, "wght" 600;
+  font-size: 50px;
+  color: #20e119;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#click-hint.pulsing {
+  animation: pulseHint 2.5s ease-in-out infinite;
+}
+
+#click-hint.hidden {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes pulseHint {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+#contact {
+  padding: 60px 20px;
+  margin-top: 1000px; /* ajusta según tu diseño */
+  position: relative;
+  z-index: 1;
+}
+

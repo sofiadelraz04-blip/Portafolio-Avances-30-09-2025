@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sofia del Razo</title>
+  <link rel="stylesheet" href="https://use.typekit.net/qld2inn.css">
+  <link rel="stylesheet" href="styles.css">
+
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'qld2inn',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'qld2inn',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+
+
+</head>
+
+
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+
+
+<body>
+
+    <nav>
+      <ul>
+        <div class="ornaments">
+          <img src="ornamenthead.svg" alt="Logo" class="nav-icon">
+        </div>
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#work">Work</a>
+          <ul class="dropdown-menu">
+            <li><a href="projects.html#portfolio">Project 001</a></li>
+            <li><a href="projects.html#collaborations">Project 002</a></li>
+            <li><a href="projects.html#exhibitions">Project 003</a></li>
+          </ul>
+
+
+        </li>
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      const triggerPoint = 200;
+
+      if (window.scrollY >= triggerPoint) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    });
+  </script>
+
+<div class="marquee-container">
+  <div class="marquee-left">
+    <div class="track-left">
+      <span>Welcome! Welcome! Welcome! Welcome!</span>
+      <span>Welcome! Welcome! Welcome! Welcome!</span>
+    </div>
+  </div>
+
+  <div class="marquee-right">
+    <div class="track-right">
+      <span>Sofía del Razo Sofía del Razo Sofía del Razo Sofía del Razo</span>
+      <span>Sofía del Razo Sofía del Razo Sofía del Razo Sofía del Razo</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div id="about" class="content-section">
+    <h1 class="variable-title">Nice to meet you!</h1>
+
+            <script>
+          const title = document.querySelector('.variable-title');
+          let wght = 300;
+          let rand = 0;
+          let direction = 1;
+
+          setInterval(() => {
+            wght += 50 * direction;
+            rand += 0.1 * direction;
+
+            if (wght >= 1000 || wght <= 300) direction *= -1;
+
+            title.style.fontVariationSettings = `"wght" ${wght}, "RAND" ${rand.toFixed(2)}`;
+          }, 100);
+        </script> 
+
+<div class="intro1">
+  My name is <span class="hover-name">Sofía</span> and I'm an industrial designer.
+  <div class="hover-image">
+    <img src="sofia.png" alt="Photo of Sofía">
+  </div>
+</div>
+
+
+
+     <p class="intro2">
+      Originally from Veracruz, Mexico, I graduated from Universidad Anáhuac campus Querétaro.</p>
+     <p class="intro3">I’m an eternally curious, self-taught person who is always learning. For me, design is a space for experimentation, 
+      where every experience, research, and creation becomes a piece that contributes to my professional and personal growth.</p>
+     <p class="intro4">Passionate about exploring design in all its dimensions—from the most technical and precise to the most sensitive and creative.</p>  
+
+    </p>
+
+  </div>
+
+  <div id="work" class="work">
+  <h1>My Work</h1>
+  <h2>My Work</h2>
+  <p class="work1">
+    Lending you a piece of me.<br>
+  </p>
+  <p class="work2">
+    <a href="projects.html" style="font-weight:bold; color:#546bc3; text-decoration:underline;">
+      Explore projects →
+    </a>
+  </p>
+
+  
+
+  <model-viewer
+  id="modeloInteractivo"
+  src="TATO.glb"
+  alt="tato"
+  camera-orbit="-30deg 90deg -1m"
+  shadow-intensity="0.5"
+  class="TATO">
+</model-viewer>
+
+<div id="click-hint" class="pulsing">Click!</div>
+
+<script>
+    const modelo = document.getElementById('modeloInteractivo');
+    const clickHint = document.getElementById('click-hint');
+    let controlesActivos = false;
+
+    modelo.addEventListener('click', () => {
+      controlesActivos = !controlesActivos;
+
+      if (controlesActivos) {
+        modelo.setAttribute('camera-controls', '');
+        clickHint.classList.add('hidden');
+        clickHint.classList.remove('pulsing');
+      } else {
+        modelo.removeAttribute('camera-controls');
+        clickHint.classList.remove('hidden');
+        clickHint.classList.add('pulsing');
+      }
+    });
+  </script>
+
+
+
+  </div>
+
+
+  <div id="contact" class="contact">
+    <h2>Contact form under construction!</h2>
+    <p>
+     
+  </div>
+</body>
+</html>
+
+
+
+
